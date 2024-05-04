@@ -176,3 +176,29 @@
 // setTimeout(() => {
 //     console.log("hi Welcome this is using function expression");
 // }, 4000);
+
+// !OOP
+// const person = {
+//     name:"Musarraf",
+//     age:24,
+//     greet: function(){  //method
+//         console.log(`Welcome ${this.name}`);
+//     }
+// }
+
+// console.log(person.age);
+// person.greet()
+
+// !Constructor in OOP
+function Car(make, model, year, color){
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.color = color;
+    this.drive = function(){console.log(`you drive  the ${this.model}`);}
+}
+
+const car1 = new Car("Ford", "Mustang", 2024, "red")
+
+console.log(car1.make);
+car1.drive()
