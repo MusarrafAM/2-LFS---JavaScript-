@@ -41,3 +41,16 @@ Instead of using function declarations then passing a callback we can pass an en
 We will be using function expressions a lot (Callbacks, High order functions, Closures, Event Listeners) Make sure you understands it fully.
 
 A better way to write function expressions if it’s a simple function that we only use once is to write it as an Arrow function.
+
+In Objects = property an object has, where methods are functions that the object can perform.
+
+ This = reference to the object where this is used. this keyword doesn’t work on arrow functions.
+
+The constructor will automatically called when we initiated a new object.
+
+Class = class is a ES6 feature provides a more structured and clearer way to work with objects compared to traditional constructor functions (class will include a constructor) ex= static keyword, encapsulation, inheritance.
+
+static = keyword that defines properties or methods that belong to a class itself rather than the object created from that class.  (class owns anything static, not the object)
+To acces static attribute or methods we don’t need to create an instance of an object.                    can directly use it from the object itself.
+
+Inheritance =  allows a new class to inherit properties and methods from existing class (parent -> child) , helps with code reusability. We use extendes keywod in inheritance.

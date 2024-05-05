@@ -134,7 +134,6 @@
 
 // console.log(evenNums);
 
-
 // !Reduce
 // EG - 1
 // const prices = [10, 20, 40, 60, 80]
@@ -142,7 +141,7 @@
 
 // console.log(total)
 
-// function sum(previous ,next){   //i have renamed the accumulator and elements here. 
+// function sum(previous ,next){   //i have renamed the accumulator and elements here.
 //     return previous + next
 // }
 
@@ -157,14 +156,12 @@
 //     return Math.max(accumulator, element)
 // }
 
-
 // !Arrow FUnction
 // Eg - 1
 // const greetings = (name, age) => `Hello Welcome ${name} \nYou are ${age}`
 
 // console.log(greetings("Musarraf", 24));
 // console.log(greetings("Ihzan", 23));
-
 
 // Eg - 2 setTimeout
 
@@ -190,15 +187,71 @@
 // person.greet()
 
 // !Constructor in OOP
-function Car(make, model, year, color){
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.color = color;
-    this.drive = function(){console.log(`you drive  the ${this.model}`);}
+// function Car(make, model, year, color){
+//     this.make = make;
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
+//     this.drive = function(){console.log(`you drive  the ${this.model}`);}
+// }
+
+// const car1 = new Car("Ford", "Mustang", 2024, "red")
+
+// console.log(car1.make);
+// car1.drive()
+
+// !class
+// class Person {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   // Inside class No need to use the function keyword to create methods
+//   greet(city) {
+//     console.log(
+//       `Welcome to ${city} city ${this.name} You are ${this.age} years old.`
+//     );
+//   }
+// }
+// person1 = new Person("Musarraf", 24);
+
+// person1.greet("Colombo");
+
+// !static Keyword
+
+// static = keyword that defines properties or methods that belong to a class itself rather than the object created from that class.
+//          (class owns anything static, not the object)
+
+// EG - 01
+// class MathUtil {
+//   static PI = 3.14159;
+
+//   static getCircumference(radius){
+//     return 2 * this.PI * radius
+//   }
+// }
+
+// console.log(MathUtil.PI); //To acces static attribute or methods we dont need to create an instance of an object.
+// //                          can directly use it from the object itself.
+// console.log(MathUtil.getCircumference(10));
+
+// EG - 02;
+
+class User {
+  static userCount = 0;
+
+  constructor(username) {
+    this.username = username;
+    User.userCount++;
+  }
+
 }
 
-const car1 = new Car("Ford", "Mustang", 2024, "red")
 
-console.log(car1.make);
-car1.drive()
+const user1 = new User("Musarraf")
+const user2 = new User("Bro")
+const user3 = new User("Kratose")
+
+console.log(user1.username);
+console.log(User.userCount);
