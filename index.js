@@ -238,20 +238,192 @@
 
 // EG - 02;
 
-class User {
-  static userCount = 0;
+// class User {
+//   static userCount = 0;
 
-  constructor(username) {
-    this.username = username;
-    User.userCount++;
-  }
+//   constructor(username) {
+//     this.username = username;
+//     User.userCount++;
+//   }
 
+// }
+
+// const user1 = new User("Musarraf")
+// const user2 = new User("Bro")
+// const user3 = new User("Kratose")
+
+// console.log(user1.username);
+// console.log(User.userCount);
+
+// !Super   Very importand consept
+// super = keyword used in classes to call the constructor or acces the properties and methods of a parent (superclass)
+// this = this object
+// super = the parent
+
+// class Animal {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   move(speed) {
+//     console.log(`The ${this.name} moves at the speed of ${speed}mph`);
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   constructor(name, age, runSpeed) {
+//     super(name, age);
+//     this.runSpeed = runSpeed;
+//   }
+
+//   run() {
+//     console.log(`this ${this.name} can run`);
+//     super.move(this.runSpeed)
+//   }
+// }
+
+// class Fish extends Animal {
+//   constructor(name, age, swimSpeed) {
+//     super(name, age);
+//     this.swimSpeed = swimSpeed;
+//   }
+
+//   swim() {
+//     console.log(`this ${this.name} can swim`);
+//     super.move(this.swimSpeed)
+//   }
+// }
+
+// let rabbit1 = new Rabbit("rabbit", 1, 25);
+// let fish1 = new Fish("fish", 2, 12);
+
+// console.log(rabbit1.name, rabbit1.age, rabbit1.runSpeed);
+// console.log(fish1.name, fish1.age, fish1.swimSpeed);
+
+// rabbit1.run();
+// fish1.swim();
+
+// !getters and setters
+// class Person {
+//   constructor(firstName, lastName, age) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     this.age = age;
+//   }
+
+//   set firstName(newFirstName) {
+//     if (typeof newFirstName === "string" && newFirstName.length > 0) {
+//       this._firstName = newFirstName; // Here _firstName is to indicate other developers its a private property we should not touch it.
+//     } else {
+//       console.error("First name must be a non-empty string");
+//     }
+//   }
+
+//   set lastName(newLastName) {
+//     if (typeof newLastName === "string" && newLastName.length > 0) {
+//       this._lastName = newLastName; // Here _firstName is to indicate other developers its a private property we should not touch it.
+//     } else {
+//       console.error("Last name must be a non-empty string");
+//     }
+//   }
+
+//   set age(newAge) {
+//     if (typeof newAge === "number" && newAge >= 0) {
+//       this._age = newAge;
+//     }else{
+//         console.error("Age must be a non-negative number");
+//     }
+//   }
+
+//   get firstName(){
+//     return this._firstName;
+//   }
+
+//   get lastName(){
+//     return this._lastName;
+//   }
+
+//   get age(){
+//     return this._age;
+//   }
+
+//   get fullName(){
+//     return this._firstName  + " " +  this._lastName;
+//   }
+
+// }
+
+// const person1 = new Person("Muhammed", "Musarraf", 24); //to check give number for name and age as negative number.
+
+// console.log(person1.firstName);
+// console.log(person1.lastName);
+// console.log(person1.age);
+// console.log(person1.fullName);
+
+// !Destructuring
+// destructuring = extract values from arrays and objects then assign them to variables in a convenient way
+// [] = to perform array destructuring
+// {} = to perform object destructuring
+
+// example - 1
+// Assign Array elements to variables
+// let colors = ["red", "green", "blue", "black", "white"];
+
+// const [firstColor, secondColor, thirdColor, ...extraColor] = colors; //Here ...extraColour is rest parameter
+
+// console.log(firstColor);
+// console.log(secondColor);
+// console.log(thirdColor);
+// console.log(extraColor);
+
+// example - 2
+// Extract Values from objects
+
+// const person1 = {
+//   fName: "Muhammed",
+//   lName: "Musarraf",
+//   age: 24,
+//   job: "Software Engineer",
+// };
+
+// const person2 = {
+//   fName: "Muhammed",
+//   lName: "Musha",
+//   age: 30,
+//   job: "Software Engineer professional",
+// };
+
+// const person3 = {
+//   fName: "james",
+//   lName: "Bond",
+//   age: 30,
+// };
+
+// const { fName, lName, age, job = "Looking for Job" } = person1; //here Looking for Job"  is the default value if someone doenst have a job.
+// console.log(fName);
+// console.log(lName);
+// console.log(age);
+// console.log(job);
+
+// example - 3
+// !Destructure in function parameters = Important
+
+function displayPerson({ fName, lName, age, job }) {
+  // we can give defalut values for this as well.
+  console.log(`it is ${fName} ${lName}, ${age} years old, a ${job}.`);
 }
 
+const person1 = {
+  fName: "Muhammed",
+  lName: "Musarraf",
+  age: 24,
+  job: "Software Engineer",
+};
 
-const user1 = new User("Musarraf")
-const user2 = new User("Bro")
-const user3 = new User("Kratose")
-
-console.log(user1.username);
-console.log(User.userCount);
+const person2 = {
+  fName: "Muhammed",
+  lName: "Musha",
+  age: 30,
+  job: "Software Engineer professional",
+};
