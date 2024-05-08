@@ -409,21 +409,141 @@
 // example - 3
 // !Destructure in function parameters = Important
 
-function displayPerson({ fName, lName, age, job }) {
-  // we can give defalut values for this as well.
-  console.log(`it is ${fName} ${lName}, ${age} years old, a ${job}.`);
-}
+// function displayPerson({ fName, lName, age, job }) {
+//   // we can give defalut values for this as well.
+//   console.log(`it is ${fName} ${lName}, ${age} years old, a ${job}.`);
+// }
 
-const person1 = {
-  fName: "Muhammed",
-  lName: "Musarraf",
-  age: 24,
-  job: "Software Engineer",
-};
+// const person1 = {
+//   fName: "Muhammed",
+//   lName: "Musarraf",
+//   age: 24,
+//   job: "Software Engineer",
+// };
 
-const person2 = {
-  fName: "Muhammed",
-  lName: "Musha",
-  age: 30,
-  job: "Software Engineer professional",
-};
+// const person2 = {
+//   fName: "Muhammed",
+//   lName: "Musha",
+//   age: 30,
+//   job: "Software Engineer professional",
+// };
+
+// !Nested Objects
+
+// class Person{
+//   constructor(name, age, ...address){ // this is rest parameter
+//     this.name = name
+//     this.age = age
+//     this.address = new Address(...address)
+
+//   }
+// }
+
+// class Address {
+//   constructor(street, city, country){
+//     this.street = street
+//     this.city = city
+//     this.country = country
+//   }
+// }
+
+// const person1 = new Person("Musarraf", 24, "446/1", "Colombo road", "Colombo-02")
+
+// console.log(person1.address);
+
+// !array of objects
+// const fruits = [
+//   { name: "apple", color: "red", calories: 80 },
+//   { name: "orange", color: "orange", calories: 60 },
+//   { name: "banana", color: "yellow", calories: 180 },
+//   { name: "pinapple", color: "yellow", calories: 37 },
+// ];
+
+// !Important
+
+// fruits.forEach(fruit => console.log(fruit.color))
+
+// const fruitNames = fruits.map(fruit => fruit.name)
+// console.log(fruitNames);
+
+// const yellowFruit = fruits.filter(fruit => fruit.color === "yellow")
+// console.log(yellowFruit);
+
+// accumulator, element = renamed into max, fruit)
+// const maxFruit = fruits.reduce((max, fruit) =>
+//   fruit.calories > max.calories ? fruit : max
+// );
+// console.log(maxFruit);
+
+// !Sorting
+// const fruits = ["apple", "orange", "banana", "coconut"];
+// const nums = [1, 4, 2, 7, 0, 3, 6, 8, 5];
+// fruits.sort();
+// nums.sort();
+// console.log(fruits);
+// console.log(nums);
+
+// let items = [
+//   { name: "Apple", price: 30 },
+//   { name: "Banana", price: 20 },
+//   { name: "Orange", price: 25 }
+// ];
+
+// items.sort((a, b) => a.price - b.price); // sorting by price
+// console.log(items);
+
+// let numbers = [4, 2, 5, 1, 3];
+// numbers.sort((a, b) => a - b); // ascending order
+// console.log(numbers); // Output: [1, 2, 3, 4, 5]
+
+// let numbers = [4, 2, 5, 1, 3];
+// numbers.sort((a, b) => b - a); // descending order
+// console.log(numbers); // Output: [5, 4, 3, 2, 1]
+
+// !Closure
+
+// closure = a function defined inside of another function, the inner function has acces to the variables and scope of the outer function,
+//           Allow for private variables and state maintenance.  used frequently in JS frameworks: React, Vue, Anguler
+
+// EG - 01
+
+// function outer(){
+//     let message = "Hello"
+
+//     function inner(){
+//         console.log(message);
+//     }
+
+//     inner()
+// }
+
+// outer()
+
+// EG - 02 = state maintanatce with private variable
+
+// function createCounter() {
+//   let count = 0;
+
+//   function increment() {
+//     count++;
+//     console.log(`Count Increased to ${count}`);
+//   }
+
+//   function getCount() {
+//     return count;
+//   }
+
+//   return { increment, getCount }; // shorter version of this =  return {increment: increment}
+// }
+
+// const conter = createCounter();
+// conter.increment();
+// conter.increment();
+// console.log(`The count is ${conter.getCount()}`);
+
+
+// !setTimeout
+
+// setTimeout(()=>{
+//     window.alert("Hello")
+// }, 3000)
