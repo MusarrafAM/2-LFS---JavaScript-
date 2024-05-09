@@ -541,9 +541,85 @@
 // conter.increment();
 // console.log(`The count is ${conter.getCount()}`);
 
-
 // !setTimeout
 
 // setTimeout(()=>{
 //     window.alert("Hello")
 // }, 3000)
+
+// !asynchronous
+// synchronous = Executes line by line consecutively in a sequential manner Code that waits for an operation to complete.
+
+// asynchronous = Allows multiple operations to be perforemed concurrently without waiting.
+// doesn't block the execution flow and allows the program to continue
+// (I/O operations, network requests, fetching data)
+// handled with : Callbacjs, Promisses, Async/Await
+
+// EG - 01
+// setTimeout(() => {
+//     console.log("Task 1");
+// }, 3000);
+
+// console.log("Task 2");
+// console.log("Task 3");
+// console.log("Task 4");
+
+// EG - 02
+// function func1(callback) {
+//   setTimeout(() => {
+//     console.log("Task 1");
+//     callback();
+//   }, 3000);
+// }
+
+// function func2() {
+//   console.log("Task 2");
+//   console.log("Task 3");
+//   console.log("Task 4");
+// }
+
+// // now it will wait for tast1 to complete to execute next tasks (this example we used callback)
+// func1(func2);
+
+// Error
+// error = An object that is created to represent a problem that occurs
+// can use try catch finally(optional)
+// if we handle the error properly our program reaches the end without crash
+
+// ex - 01
+// consele.log("Hello")
+// console.log("Programe Will not reaches this code - End");
+
+// ex - 02
+// try {
+//   cenzsele.log("Hello");
+// } catch (error) {
+//   console.error(error);
+// } finally {
+//   console.log("This will always executes");
+// }
+
+// console.log("when hanlde error properly Programe reaches the end");
+
+// // !ex - 03
+
+// try {
+//   const divident = Number(window.prompt("Enter a divident: "));
+//   const divisor = Number(window.prompt("Enter a divisor: "));
+
+//   if (divisor == 0) {
+//     throw new Error("You can't divide by zero!"); // Create our our custorm error object
+//   }
+//   if (isNaN(divident) || isNaN(divisor)) {
+//     throw new Error("Values must be a number");
+//   }
+
+//   const result = divident / divisor;
+//   console.log(result);
+// } catch (error) {
+//   console.error(error);
+// }
+
+// console.log("when hanlde error properly Programe reaches the end");
+
+
