@@ -719,3 +719,81 @@
 //     });
 //   });
 // });
+
+//! Promises
+// Promise = An object that manages asynchronous operations.
+// Wrap a Promise Object around { asynchronous code }
+// “ I promise to return a value ”
+// PENDING ->  RESOLVED or REJECTED
+// new Promise( ( resolve, reject ) => { asynchronous code } )
+
+function task1() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const task1Completed = true;
+      if (task1Completed) {
+        resolve("Task 1 Complete");
+      } else {
+        reject("Task 1 Incomplete");
+      }
+    }, 2000);
+  });
+}
+
+function task2() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const task2Completed = true;
+      if (task2Completed) {
+        resolve("Task 2 Complete");
+      } else {
+        reject("Task 2 Incomplete");
+      }
+    }, 2000);
+  });
+}
+
+function task3() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const task3Completed = false;
+      if (task3Completed) {
+        resolve("Task 3 Complete");
+      } else {
+        reject("Task 3 Incomplete");
+      }
+    }, 2000);
+  });
+}
+
+function task4() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const task4Completed = ture;
+      if (task4Completed) {
+        resolve("Task 4 Complete");
+      } else {
+        reject("Task 4 Incomplete");
+      }
+    }, 2000);
+  });
+}
+
+task1()
+  .then((value) => {
+    console.log(value);
+    return task2();
+  })
+  .then((value) => {
+    console.log(value);
+    return task3();
+  })
+  .then((value) => {
+    console.log(value);
+    return task4();
+  })
+  .then((value) => {
+    console.log(value);
+    console.log("You finished all the tasks");
+  })
+  .catch((error) => console.error(error));
