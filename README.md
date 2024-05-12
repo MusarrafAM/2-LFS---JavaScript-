@@ -54,3 +54,127 @@ static = keyword that defines properties or methods that belong to a class itsel
 To acces static attribute or methods we don’t need to create an instance of an object.                    can directly use it from the object itself.
 
 Inheritance =  allows a new class to inherit properties and methods from existing class (parent -> child) , helps with code reusability. We use extendes keywod in inheritance.
+
+super = keyword used in classes to call the constructor or acces the properties and methods of a parent (superclass) 
+this = this object 
+super = the parent
+
+
+getters = special method that makes a property readable 
+setters = special method that makes a property writeable
+we use getters and setters to  validate and modify a value when reading/writing a property. (check example in code)
+
+destructuring = extract values from arrays and objects then assign them to variables in a convenient way 
+[ ] = to perform array destructuring 
+{ } = to perform object destructuring
+
+closure = a function defined inside of another function, the inner function has acces to the variables and scope of the outer function,
+Allow for private variables and state maintenance.  used frequently in JS frameworks: React, Vue, Anguler
+
+setIntervel works like setTimeout except it will call a function repeatedly after the interval time period   ( setTimeout only once)  eg – setIntervel with 1000ms for digital clock with update cloch callback function.
+
+ES6 modules =  An external file that contains reusable code that can be imported into other JavaScript files/ Can contain variables, classes, functions etc…
+
+synchronous = Executes line by line consecutively in a sequential manner Code that waits for an operation to complete.
+
+asynchronous = Allows multiple operations to be perforemed concurrently without waiting.
+doesn't block the execution flow and allows the program to continue
+(I/O operations, network requests, fetching data)
+handled with : Callbacjs, Promisses, Async/Await
+
+
+error = An object that is created to represent a problem that occurs
+try { } = elncose code that might potentially cause an error.
+Catch { } = Catch and handle any thrown Errors from try { }
+Finally  { } =  ( optional ) Always executes. Used mostly for cleanup 
+	           Ex=  close files, close connection, release resourses.
+if we handle the error properly our program reaches the end without crash
+
+DOM – Document Object Model.
+DOM =  JS Object { }  that represents the page you see in the web browser and provides you with an API to interact with it. Web browsers construct the DOM when it loads an HTML  document, and structure all the elements in a tree-like representation. Javascript can access the DOM to dynamically change the content, structure, and style of a webpage.
+
+
+
+Element selectors = Methods used to target and manipulate HTML elements.
+
+1.	document.getElementById ()            ==      ELEMENT   OR   NULL
+2.	document.getElementByClassName ()            ==      HTML COLLECTION
+3.	document.getElementByTagName ()            ==      HTML COLLECTION
+4.	document.querySelector ()            ==      FRIST ELEMET (only one)    OR   NULL
+5.	document.querySelectorAll ()            ==      NODELIST
+
+DOM Navigation
+
+.firstElementChild
+.lastElementChild
+.nextElementSibling
+.previousElementSibling
+.parentElement
+.children
+
+Eg for nextElementSibling : 
+Const element = document.getelEmentById(“apple”)
+Const nextSibling = element.nextElementSibling
+nextSibling.style.backgroundColor =   “yellow”
+
+
+
+ADD OR CHANGE HTML
+Step 1 = Create an element  
+const newH1 = document.createElement(“h1”);
+
+Step2 = Add attributes/properties
+newH1.textContent =  “I like Pizza”
+newH1.id =  “myH1”
+newH1.style.color = “green”
+
+step 3 = Append the elemet to the DOM (append or prepend)
+document.getElementById(“myH1).append(newH1)
+
+step 4  = Remove The Element if not neded
+document.body.removeChild(newH1);
+
+eventListener = Listen for specifit events to create interactive web pages.
+mouseEvents  =  click, mouseover, mouseout
+keyEvents = keydown, keyup
+.addEventListener(event, callback) // instead callback we can pass annonymos OR arrow function.
+Example 
+Const myBox = document.getElementById(“myBox”)
+
+myBox.addEventListener(“click”,  event  => {
+	event.target.style.backgroundColor = “red”;
+});
+NodeList = Static Collection of HTML elements by (id, class, elements)
+Can be created by using querySelectorAll()
+Similar to an array, but no (map, filter, reduce) can use foreach.
+NodeList won’t update to automatically reflect changes
+
+ClassList = Element property in Javascript used to interact with an element’s list of classes ( css classes ).
+
+Element.classList.add( “classname”  )
+Element.classList.remove ( )
+Element.classList.toggle ( ) = remove if present, Add if not present
+Element.classList.replace ( oldCLass, newClass )
+Element.classList.contains ( )  == this will return true or false if the element contains the class or not
+
+Eg -1
+Const myButton = document,getElementById(“myButton”);
+myButton.addEventListener(“mouseover”, event => {
+	event.target.classList.add(“hover”)  //hover is a class in css file.
+})
+
+Do the Rock Paper Scissors Programe to Familiar with the concepts of DOM.
+See the preview in BrosCode before doing it.
+
+
+
+Callback Hell = Situation in javaScript where callbacks are nested within other callbacks to the degree where the code is difficult to read. Callbacks are Old pattern to handle asynchronous functions.
+Use Promises + async/await to avoid Callback Hell.
+
+Promise = An object that manages asynchronous operations.
+Wrap a Promise Object around { asynchronous code }
+“ I promise to return a value ”
+PENDING ->  RESOLVED or REJECTED
+new Promise( ( resolve, reject ) => { asynchronous code } )
+
+if a promise rejects it won’t even try to go to the next promise.
