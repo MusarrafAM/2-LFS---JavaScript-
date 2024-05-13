@@ -880,3 +880,81 @@
 // }
 
 // doTasks();
+
+// JSON = (JavaScript Object Notation) data-interchange format Used for exchanging data between a server and a web application
+// JSON files = { key:value } OR [value1, value2, value3]  OR Combination of both object and arrays
+
+// JSON.stringify() = converts a JS object into a JSON string
+// JSON.parse()  = converts a JSON string into a JS object
+
+//! Fetch
+// Fetch = function used for making HTTP requests to fetch resources. (JSON style data, images, files)
+// Simplifies asynchronous data fetching in JavaScript and used for interacting with APIs to retrieve and send data asynchronously over the web.
+// Fetch( url, {options} )   =   optios  = {methods : “GET”}
+
+// using promise method
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu") //response.json() = change json data into javascript object
+//   .then((response) => response.json()) //fetch returns a promise so we used .then
+//   .then((data) => console.log(data)) // .json will also returns a promise so we use .then here as well
+//   .catch((error) => console.error(error));
+
+// same above with error throwing and handling
+// fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error("Could not fetch resource");
+//     }
+//     return response.json();
+//   })
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
+
+// ! VERY IMPORTANT  using async/await
+
+// async function fetchData() {
+//   try {
+//     const response = await fetch("https://pokeapi.co/api/v2/pokemon/pikachu");
+
+//     // Once an error is thrown, the execution of the try block stops, and the control is transferred to the catch block.
+
+//     if (!response.ok) {
+//       throw new Error("Could not fetch resourse");
+//     }
+
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// fetchData();
+
+//! Good =  Code for pokemon image generator
+// async function fetchData() {
+//   try {
+//     const pokemonName = document
+//       .getElementById("pokemonName")
+//       .value.toLowerCase();
+
+//     const response = await fetch(
+//       `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+//     );
+
+//     //   Once an error is thrown, the execution of the try block stops, and the control is transferred to the catch block.
+
+//     if (!response.ok) {
+//       throw new Error("Could not fetch resourse");
+//     }
+
+//     const data = await response.json();
+//     const pokimonSprite = data.sprites.front_default;
+
+//     const imageElement = document.getElementById("pokimonSprite");
+//     imageElement.src = pokimonSprite;
+//     imageElement.style.display = "block";
+//     console.log(pokimonSprite);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
