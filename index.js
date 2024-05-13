@@ -727,73 +727,156 @@
 // PENDING ->  RESOLVED or REJECTED
 // new Promise( ( resolve, reject ) => { asynchronous code } )
 
-function task1() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const task1Completed = true;
-      if (task1Completed) {
-        resolve("Task 1 Complete");
-      } else {
-        reject("Task 1 Incomplete");
-      }
-    }, 2000);
-  });
-}
+// function task1() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task1Completed = true;
+//       if (task1Completed) {
+//         resolve("Task 1 Complete");
+//       } else {
+//         reject("Task 1 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
 
-function task2() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const task2Completed = true;
-      if (task2Completed) {
-        resolve("Task 2 Complete");
-      } else {
-        reject("Task 2 Incomplete");
-      }
-    }, 2000);
-  });
-}
+// function task2() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task2Completed = true;
+//       if (task2Completed) {
+//         resolve("Task 2 Complete");
+//       } else {
+//         reject("Task 2 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
 
-function task3() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const task3Completed = false;
-      if (task3Completed) {
-        resolve("Task 3 Complete");
-      } else {
-        reject("Task 3 Incomplete");
-      }
-    }, 2000);
-  });
-}
+// function task3() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task3Completed = false;
+//       if (task3Completed) {
+//         resolve("Task 3 Complete");
+//       } else {
+//         reject("Task 3 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
 
-function task4() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const task4Completed = ture;
-      if (task4Completed) {
-        resolve("Task 4 Complete");
-      } else {
-        reject("Task 4 Incomplete");
-      }
-    }, 2000);
-  });
-}
+// function task4() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task4Completed = ture;
+//       if (task4Completed) {
+//         resolve("Task 4 Complete");
+//       } else {
+//         reject("Task 4 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
 
-task1()
-  .then((value) => {
-    console.log(value);
-    return task2();
-  })
-  .then((value) => {
-    console.log(value);
-    return task3();
-  })
-  .then((value) => {
-    console.log(value);
-    return task4();
-  })
-  .then((value) => {
-    console.log(value);
-    console.log("You finished all the tasks");
-  })
-  .catch((error) => console.error(error));
+// task1()
+//   .then((value) => {
+//     console.log(value);
+//     return task2();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     return task3();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     return task4();
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     console.log("You finished all the tasks");
+//   })
+//   .catch((error) => console.error(error));
+
+//! Async/Await
+// Async/Await = Async makes a function return a Promise.
+// 		 Await makes an async function wait for a promise.
+
+//* Allows you write asynchronous code in synchronous manner
+// Async doesn’t have resolve or reject parameters.
+// Everything after Await is placed in an Even queue
+
+// function task1() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task1Completed = true;
+//       if (task1Completed) {
+//         resolve("Task 1 Complete");
+//       } else {
+//         reject("Task 1 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
+
+// function task2() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task2Completed = true;
+//       if (task2Completed) {
+//         resolve("Task 2 Complete");
+//       } else {
+//         reject("Task 2 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
+
+// function task3() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task3Completed = false;
+//       if (task3Completed) {
+//         resolve("Task 3 Complete");
+//       } else {
+//         reject("Task 3 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
+
+// function task4() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const task4Completed = true;
+//       if (task4Completed) {
+//         resolve("Task 4 Complete");
+//       } else {
+//         reject("Task 4 Incomplete");
+//       }
+//     }, 2000);
+//   });
+// }
+
+// //! Important
+// async function doTasks() {
+//   try {
+//     const task1Result = await task1();
+//     console.log(task1Result);
+
+//     const task2Result = await task2();
+//     console.log(task2Result);
+
+//     const task3Result = await task3();
+//     console.log(task3Result);
+
+//     const task4Result = await task4();
+//     console.log(task4Result);
+
+//     console.log("You complete All the tasks");
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
+
+// doTasks();
