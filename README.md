@@ -178,3 +178,19 @@ PENDING ->  RESOLVED or REJECTED
 new Promise( ( resolve, reject ) => { asynchronous code } )
 
 if a promise rejects it won’t even try to go to the next promise.
+
+Async/Await = Async makes a function return a Promise.
+		 	  Await makes an async function wait for a promise.
+
+Allows you write asynchronous code in synchronous manner 
+Async doesn’t have resolve or reject parameters.
+Everything after Await is placed in an Even queue
+
+JSON = (JavaScript Object Notation) data-interchange format Used for exchanging data between a server and a web application JSON files { key:value }  OR  [value1, value2, value3]
+
+JSON.stringify() = converts a JS object into a JSON string
+JSON.parse()  = converts a JSON string into a JS object 
+Fetch = function used for making HTTP requests to fetch resources. (JSON style data, images, files)
+Simplifies asynchronous data fetching in JavaScript and used for interacting with APIs to retrieve and send data asynchronously over the web.
+Fetch( url, {options} )   =   optios  = {methods : “GET”}
+
