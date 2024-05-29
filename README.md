@@ -237,3 +237,58 @@ callstack is also called as execution controll stack, program stack, control sta
 when asked what is hoisting in interview first give the typical answer then give the callstack answer after saying if we look at this in the excution context callstack view in js.
 
 ---Ep.4 - How functions work in JS ❤️ & Variable Environment ---
+
+Every execution context will maintain its own seperate space.(All EC will have their own seperate memory space which are independatnt of each other.)
+
+Pic = Variable Environment 4.1
+Pic = Variable Environment 4.2
+
+---Ep.5 - SHORTEST JS Program 🔥window & this keyword ---
+
+Google chrome's JS engine is V8.
+likewise other browsers has their own JS engine
+
+The shortest JS programme is an empty js file. (JS engine will create a GEC. and also JS engine will create a windiow.)
+1 = GEC ("this" keword also created along with EC)
+2 = window
+
+Whenver a EC is created a "this" keyword is also created along with it.
+
+At global level "this" points to the global object which is window in case of browsers. (this == window)
+
+global space = any code in JS which is not inside a function.
+
+<!--! whenever we create a varialbe or funtions on the global space it will be attached to the window object. -->
+
+eg :
+var a = 10;
+
+console.log(window.x)
+console.log(this.x)
+console.log(x)
+
+whenever we don't put anything infront of x it automatically assumes you are refering to the global space, so at global space this refers to the window so these above 3 will result the same.
+
+---Ep.6 - undefined vs not defined in JS 🤔 ---
+undefined is a very special keyword in JS , it is not there in other languages.
+
+undefined is like a place holder until the variable gets it's value after execution.(undefined is not actually empty its taking its memory accordingly.)
+not defined is when memory is not allocated to that variable (it's not there in the programe).
+
+var a;
+if we never assigned a value to a variable it will be undefined.
+
+<!--! JS is a loosely typed language -->
+
+the type of a variable can be changed along the way.
+
+var a
+console.log(a)
+a = 10;
+console.log(a)
+a = "Hello World"
+console.log(a)
+
+---Ep.7 - The Scope Chain, 🔥Scope & Lexical Environment ---
+
+ <!--! This is moslty asked in interviews = Scope Chain -->
