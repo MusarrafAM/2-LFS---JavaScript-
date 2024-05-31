@@ -292,3 +292,86 @@ console.log(a)
 ---Ep.7 - The Scope Chain, 🔥Scope & Lexical Environment ---
 
  <!--! This is moslty asked in interviews = Scope Chain -->
+
+pic = Scope & Lexical Environment 7.1
+
+<!--! Whenever an execution context is created a lexial environment is also created -->
+<!--! Lexical environment is the local memory along with the lexical environment of it's parent. -->
+
+lexical means a heirachy/order.
+
+in below picture orange thing is the refence memory.
+
+pic = Scope & Lexical Environment 7.2
+
+explaination of above picture = here the EC c in its memory it has its local memory and it's parents memory reference, likewise a has its local memory and its parents memory reference which is global EC , GEC has its memory since it has no parent it points to null.
+
+function a() {
+c();
+function c() {
+console.log(b);
+}
+}
+
+var b = 10;
+a();
+
+explaination of above code = after all EC has createted, JS engine will search for b, initially it will search function c local memory, there is not c , then it will move to its lexical parent which is func a , it will search func a local memory, if not it will go to its lexical parent GEC it will search its local memory, since the var b = 10 will aleady in the memory of GEC it will take its value and log it in the console.
+
+<!--! scope chain = chanin of all the lexical environment and the parent references is altogether called scope chain. -->
+
+<!--! so if JS engine doesnt find anything in the local memory it goes one next level of scope chain, if doesnt find in it's local memory it goes next level of the scope chain so this whole chain of lexical environment is known as the scope chain -->
+
+The mechanism of searching variables in the subsequent lexical environments is known as Scope Chain. If a variable is not found anywhere, then we say that the variable is not present in the scope chain.
+
+---Ep.8 - let & const in JS 🔥Temporal Dead Zone ---
+
+Learning Outcomes
+Are let & const declarations hoisted in JS?
+SyntaxError vs ReferenceError vs TypeError
+
+<!--! Yes, the let and const declarations are also hoisted. but they are hoisted very differently than var declarations.These are in the Temporal Dead Zone for the time being. -->
+
+<!--! TDZ(Temporal Dead Zone) =  The time let or const variable was hoisted and till it is initialized by a value, the time between these 2 is called Temporal Dead Zone-->
+
+if there is any syntax error not even one line of code will run.
+
+wrong in let (let cannot reclare bit can reassign to variable a later.)
+1 (synaxt error)
+let a = 10
+let a = 20
+
+wrong in cosnt (const cannot redeclare and cannot reassign.)
+1 (synax error)
+const a;
+a = 10
+
+2 (type error)
+const a = 10
+a = 2
+
+Hoisting Behavior: Both let and const are hoisted, but they reside in a separate memory space from the global execution context. This separation is the cause of the Temporal Dead Zone (TDZ).
+
+Temporal Dead Zone (TDZ): Until a variable declared with let or const is initialized, referencing it results in a TDZ. This zone persists until the declared variable is assigned a value.
+
+With const, declaration and initialization must occur on the same line.
+Redeclaring the same variable using let or const is not permitted.
+let allows for reassignment of values, while const does not.
+
+Memory Allocation and Access:
+
+Variables declared with let or const cannot be accessed via window or this. (Beacuse its not in the global object which is window)
+let and const variables are allocated memory separately from the global execution context.
+
+Error Types:
+
+Reference Error: Occurs when trying to access a variable that hasn't been allocated memory.
+Type Error: Arises when attempting to change the type of a variable that's not supposed to change, such as re-initializing a const.
+Syntax Error: Results from violating JavaScript syntax rules.
+Variable Declaration and Initialization:
+
+Usage Recommendations:
+
+Prioritize const, followed by let, and minimize the use of var.
+Using const whenever possible helps prevent errors and promotes immutability.
+Minimizing the TDZ duration by declaring and initializing variables at the top of the code is advisable.
