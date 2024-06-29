@@ -1,4 +1,4 @@
-# 2-LFS---JavaScript-
+# 2-LFS---JavaScript- Bros COde and the Akshay Saini's Namaste JavaScript Season - 01
 
 Always put the script tag at the end of the body tag, if js has erroes at least the html will render.
 
@@ -188,7 +188,7 @@ Fetch( url, {options} ) = optios = {methods : “GET”}
 
 -----------Bros Code Completed -------------------------------------------------------
 
--------------------------Namaste JavaScript-------------------------------------------
+-------------------------Namaste JavaScript Season - 01 -------------------------------------------
 ---Ep.1 - How JavaScript Works 🔥& Execution Context ---
 
 <!--! Important = Everything in Javascript happens inside an Execution Context. -->
@@ -209,7 +209,7 @@ When we run a js programe a global execution context will be created. this EC(ex
 1 = Memory Creation phase. (Memory allocation for the variables and functions inside the global phase)
 pic 2 = phase 1
 
-2 = Code Execution Phase. (Assigning values to the variables and if ther is any function call(Function invoking) a brand new execution context will be created inside the code are, this new EC will also have 2 parts which are memory and code. so this new EC will go through the creation of the EC which involve 2 phases. after these 2 phases newly created entire Executon will be deleted. and the controll backs to the global EC)
+2 = Code Execution Phase. (Assigning values to the variables and if there is any function call(Function invoking) a brand new execution context will be created inside the code are, this new EC will also have 2 parts which are memory and code. so this new EC will go through the creation of the EC which involve 2 phases. after these 2 phases newly created entire Executon will be deleted. and the controll backs to the global EC)
 
 pic = phase 2.1
 pic = phase 2.2
@@ -222,7 +222,7 @@ pic = phase 2.5
 
 --The Call Stack--
 
-To handle the execution context creation, deleton, controll JS manages a stack thisis called js Callstack.
+To handle the execution context creation, deleton, controll JS manages a stack this is called js Callstack.
 whenever any js program runs at the bottom of the stack the global execution context (GEC) populated.and whenever function is invoked or new EC is created it will be pushed inside the callstack, and give it conrtoll when the new EC is completed it will be poped out of the callstack and gives controll back to the GEC. when all executions are completed the GEC also will be poped out of the Callstack and the Callstack will be empty.
 
 Pic = Callstack 2.6
@@ -235,6 +235,34 @@ callstack is also called as execution controll stack, program stack, control sta
 ---Ep.3 - Hoisting in JavaScript 🔥(variables & functions) ---
 
 when asked what is hoisting in interview first give the typical answer then give the callstack answer after saying if we look at this in the excution context callstack view in js.
+
+<!--! Typical Answer:  -->
+
+Hoisting in JavaScript is a behavior where variable and function declarations are moved to the top of their containing scope during the compile phase before the code is executed. This means that regardless of where variables and functions are declared within their scope, they are treated as if they are declared at the top of the scope.
+
+For example,
+
+console.log(myVar); // undefined
+var myVar = 10;
+
+The variable myVar is hoisted to the top of its scope (in this case, the global scope), so console.log(myVar) doesn't cause an error, but myVar is undefined at that point.
+
+Similarly, function declarations are fully hoisted:
+javascript Copy code
+
+sayHello(); // "Hello!"
+
+function sayHello() {
+console.log("Hello!");
+}
+
+Here, sayHello() can be called before its declaration in the code because the function declaration is hoisted to the top.
+
+<!--! Callstack Answer(EC answer): -->
+
+When we look at hoisting from the perspective of the execution context and call stack in JavaScript, each function invocation creates its own execution context. During the creation phase of this execution context, variables declared with var are hoisted and initialized to undefined, while function declarations are fully hoisted with their definition.
+
+To understand the Callstack Answer more watch teh Ep. 3 if need more explaination (2x speed)
 
 ---Ep.4 - How functions work in JS ❤️ & Variable Environment ---
 
@@ -261,7 +289,7 @@ global space = any code in JS which is not inside a function.
 <!--! whenever we create a varialbe or funtions on the global space it will be attached to the window object. -->
 
 eg :
-var a = 10;
+var x = 10;
 
 console.log(window.x)
 console.log(this.x)
@@ -318,11 +346,67 @@ a();
 
 explaination of above code = after all EC has createted, JS engine will search for b, initially it will search function c local memory, there is not c , then it will move to its lexical parent which is func a , it will search func a local memory, if not it will go to its lexical parent GEC it will search its local memory, since the var b = 10 will aleady in the memory of GEC it will take its value and log it in the console.
 
-<!--! scope chain = chanin of all the lexical environment and the parent references is altogether called scope chain. -->
+scope chain = chanin of all the lexical environment and the parent references is altogether called scope chain.
 
 <!--! so if JS engine doesnt find anything in the local memory it goes one next level of scope chain, if doesnt find in it's local memory it goes next level of the scope chain so this whole chain of lexical environment is known as the scope chain -->
 
-The mechanism of searching variables in the subsequent lexical environments is known as Scope Chain. If a variable is not found anywhere, then we say that the variable is not present in the scope chain.
+ask chatgpd what is scope chain in javascript and below is the answer :-
+
+In JavaScript, the scope chain refers to the hierarchy of scopes that are created when functions are nested within one another. Understanding the scope chain is crucial for understanding how variables are accessed and resolved in JavaScript.
+
+Here’s how the scope chain works:
+
+1. **Global Scope**: This is the outermost scope that exists in the entire JavaScript program. Variables declared here are accessible from anywhere within the program.
+
+2. **Local Scopes (Function Scope)**: Each function creates its own scope. When a function is invoked, a new scope is created, which becomes the local scope for that function. Any variables declared within this function are scoped to that function and are not accessible from outside unless explicitly returned or referenced.
+
+3. **Nested Scopes**: When functions are nested within one another, each inner function has access to its outer function's scope. This nesting creates a chain of scopes called the scope chain.
+
+4. **Lexical Scoping**: JavaScript uses lexical scoping, which means that the scope of a variable is determined by its position within the source code. This is why the scope chain is based on how functions are nested in the code.
+
+<!--! Very important below explaination about scope chaining -->
+
+<!--! When a variable is referenced within a function, JavaScript first looks in the local scope of that function. If it doesn't find the variable there, it moves one level up the scope chain to the next outer scope and continues until it finds the variable or reaches the global scope. If the variable is not found anywhere in the scope chain, a ReferenceError is thrown. -->
+
+Here’s a basic example to illustrate the scope chain:
+
+```javascript
+// Global scope
+let globalVar = "I am global";
+
+function outerFunction() {
+  let outerVar = "I am outer";
+
+  function innerFunction() {
+    let innerVar = "I am inner";
+    console.log(globalVar); // Accessible, prints: "I am global"
+    console.log(outerVar); // Accessible, prints: "I am outer"
+    console.log(innerVar); // Accessible, prints: "I am inner"
+  }
+
+  innerFunction();
+  // console.log(innerVar); // This would cause a ReferenceError because innerVar is not accessible here
+}
+
+outerFunction();
+// console.log(outerVar); // This would cause a ReferenceError because outerVar is not accessible here
+```
+
+In this example:
+
+- `globalVar` is accessible throughout the entire program because it's in the global scope.
+- `outerVar` is accessible within `outerFunction` and also within `innerFunction` due to the scope chain.
+- `innerVar` is only accessible within `innerFunction` because it's defined only in its local scope.
+
+Understanding the scope chain helps developers write more efficient and bug-free JavaScript code by understanding where variables are defined and where they can be accessed from within nested functions.
+
+Key Differences between Scope Chaining and Closures:
+
+Scope Chaining: Refers to the mechanism of searching for variables up the scope chain hierarchy when they are referenced but not found in the immediate scope.
+
+Closures: Refers to the capability of an inner function to access and persistently hold references to variables from its outer scope(s) even after the outer function has completed execution.
+
+Usage: Scope chaining is a fundamental mechanism used by JavaScript's interpreter to resolve variable references dynamically. Closures are a powerful tool used intentionally by developers to manage function state and data encapsulation.
 
 ---Ep.8 - let & const in JS 🔥Temporal Dead Zone ---
 
@@ -335,6 +419,8 @@ SyntaxError vs ReferenceError vs TypeError
 <!--! TDZ(Temporal Dead Zone) =  The time let or const variable was hoisted and till it is initialized by a value, the time between these 2 is called Temporal Dead Zone-->
 
 if there is any syntax error not even one line of code will run.
+
+<!--! Below Very Important -->
 
 wrong in let (let cannot reclare bit can reassign to variable a later.)
 1 (synaxt error)
@@ -359,19 +445,112 @@ Redeclaring the same variable using let or const is not permitted.
 let allows for reassignment of values, while const does not.
 
 Memory Allocation and Access:
-
 Variables declared with let or const cannot be accessed via window or this. (Beacuse its not in the global object which is window)
 let and const variables are allocated memory separately from the global execution context.
 
 Error Types:
-
 Reference Error: Occurs when trying to access a variable that hasn't been allocated memory.
 Type Error: Arises when attempting to change the type of a variable that's not supposed to change, such as re-initializing a const.
 Syntax Error: Results from violating JavaScript syntax rules.
 Variable Declaration and Initialization:
 
 Usage Recommendations:
-
 Prioritize const, followed by let, and minimize the use of var.
 Using const whenever possible helps prevent errors and promotes immutability.
-Minimizing the TDZ duration by declaring and initializing variables at the top of the code is advisable.
+
+<!--! Minimizing the TDZ duration by declaring and initializing variables at the top of the code is advisable. -->
+
+---Ep.9 - BLOCK SCOPE & Shadowing in JS 🔥 ---
+
+block and scope are 2 seperat things.
+
+<!--! block = A block (enclosed curly braces) = {} -->
+
+just enclosed curly braces is a valid JS code (Just this = {})
+block is also known as Compound Statement.
+
+if(true) console.log("Welcome Single statement)
+
+the above if condition expects single statement and we give sigle statement works fine.
+but weh we want to give multiple statements we need to put them into a block(curly braces) to make all statement as a single statement.
+
+if(true){
+let a = "Multiple"
+console.log(`Welcome Single ${a} statement`)
+}
+
+<!--! block scope = What all variables and functions we can access inside a block is called block scope -->
+
+{
+var a = 10;
+let b = 20;
+const c = 30;
+}
+
+<!--! let and const are block scoped, their memory allocated to block memory.(not in global.) -->
+<!--! we can't acces this let b and const c outside of the block which is why let and const are called block scoped. -->
+
+<!--! but we can acces var a even outside of the scope which is function scope. (var is function scoped.) -->
+
+see index.js
+
+<!--! Shadowing in JS -->
+
+var a = 100;
+{
+var a = 10;
+console.log(a); //this gives 10
+}
+console.log(a); //this also gives 10 this is called shadowing.
+
+<!--! Since var a allocates memory in global, initially var a = 100 will be stored in global scope ,then inside block var a = 10 will be also stored in global scope so now var a = 100 will be replaced by var a = 10 this is called shadowing.(shadowing in var) -->
+
+let a = 100;
+{
+let a = 10;
+console.log(a); //this gives 10
+}
+console.log(a); //this gives 100.
+
+<!--! here initially for let a memory will be allocated in a differenct space than the global(not in the global), after inside the block the let a will be allocated and stored in a block scope(Not in global.) ultimatele first let a in a different place than second a which is inside block, for both memory not allocated inside the global scope since it is a let. this is also shadowing.(shadowing in let,  the same will happen for const) -->
+
+let a = 100;
+function a{
+let a = 10;
+console.log(a); //this gives 10
+}
+console.log(a); //this gives 100.
+
+pic 1 = BLOCK SCOPE & Shadowing in JS 9.1
+
+<!--! Illegal Shadowing = It occurs when a variable declared with let in the global space is shadowed within another block using var, resulting in a syntax error. However, the revese scenario is permissible. which is outsiede var inside block let is permissible. if we put const isnead of let above same things apply. -->
+
+let a = 100;
+{
+var a = 10;
+console.log(a);
+}
+console.log(a);
+
+this is extra dont confuse (if not get just leave it) = since var is functional scope if we do the above inside a function it is not illegal shadowing in sence of funtion. because var is not crosing its functional scope.
+
+let a = 100;
+function x(){
+var a = 10;
+console.log(a);
+}
+console.log(a);
+
+<!--! short Notes :- -->
+
+Block :- It is used to combine multiple statement into one statement so that we can use it at those places where javascript expects to have single statement.Refers to the scope of variables or functions within a block of code.
+Scope :- scope of a variable or a function is the place where these are accessible.
+Block scope :- The variables and function present within the scope of a block section. And block follows the lexical scope chain pattern while accessing the variable.
+Shadowing :- Providing same name to the variable as of those variable which are present in outer scope.
+shadowing let or const outside with var inside is illegal shadowing and gives error.
+
+chatGpd answer :-
+Shadowing: Occurs when a variable declared within a block shares the same name as a variable in the outer scope, effectively hiding the outer variable within that block.
+Illegal Shadowing: Refers to cases where a variable declared with let or const in the global scope is shadowed by a var declaration within a block, which is not allowed and would cause a syntax error.
+
+---Ep.10 - Closures in JS 🔥 ---

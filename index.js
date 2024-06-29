@@ -46,4 +46,68 @@
 // var b = 10;
 // a();
 
-// ---Ep.8 - let & const in JS 🔥Temporal Dead Zone ---
+// ---Ep.9 - BLOCK SCOPE & Shadowing in JS 🔥 ----
+
+// {
+//   var a = 10;
+//   let b = 20;
+//   const c = 30;
+//   console.log(a); // fine
+//   console.log(c); // fine
+//   console.log(b); // fine
+// }
+
+// console.log(a); // fine
+// console.log(b); //Error
+// console.log(c); //Error
+// let and const are block scoped and var is function scoped
+
+// Shadowing (Behavior in var)
+// var a = 100;
+// {
+//   var a = 10;
+//   console.log(a); //this gives 10
+// }
+// console.log(a); //this also gives 10 this is called shadowing.
+
+// Shadowing (Behavior in let)
+
+// let a = 100;
+// {
+//   let a = 10;
+//   console.log(a); //this gives 10
+// }
+// console.log(a); //this gives 100.
+
+// shadowing happens in block and functions
+// let a = 100;
+// function b() {
+//   let a = 10;
+//   console.log(a); //this gives 10
+// }
+// b()
+// console.log(a); //this gives 100.
+
+// var a = 100;
+// {
+//   let a = 10;
+//   console.log(a);
+// }
+// console.log(a);
+
+// Illegal Shadowing
+// let a = 100;  // same apply if i put const here.
+// {
+//   var a = 10;
+//   console.log(a);
+// }
+// console.log(a);
+
+
+
+var a = 100;
+{
+  let a = 10;
+  console.log(a);
+}
+console.log(a);
