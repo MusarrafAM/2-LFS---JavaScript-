@@ -163,15 +163,15 @@
 // initially Hello JS will be printed then after 1 sec value of i will be printed
 
 // The famouse question Clousers + SetTimeout
-function x() {
-  for (var i = 1; i <= 5; i++) {
-    setTimeout(() => {
-      console.log(i);
-    }, i * 1000);
-  }
-  console.log("Hello JS");
-}
-x();
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     setTimeout(() => {
+//       console.log(i);
+//     }, i * 1000);
+//   }
+//   console.log("Hello JS");
+// }
+// x();
 
 // JS dont wait for anything so, it will iterate through the loop ,for setTimeout function it will set the callback
 // function as function and set the timer and save those function away it will do the same for the rest of the iteration
@@ -180,19 +180,19 @@ x();
 // all the i will be show the 6 as printed value. (if we just change the var to let the bugg will be fixed but if the
 // interviewr asked to do using with the var u have to do the below method.(Closures Mehtod))
 
-// final annswer using cosures
-function x() {
-  for (var i = 1; i <= 5; i++) {
-    function close(i) {
-      setTimeout(() => {
-        console.log(i);
-      }, i * 1000);
-    }
-    close(i);
-  }
-}
+// // final annswer using cosures
+// function x() {
+//   for (var i = 1; i <= 5; i++) {
+//     function close(i) {
+//       setTimeout(() => {
+//         console.log(i);
+//       }, i * 1000);
+//     }
+//     close(i);
+//   }
+// }
 
-x();
+// x();
 
 // In this code, the `close` function is used to encapsulate the `setTimeout` function. This encapsulation ensures that
 // each `setTimeout` callback receives its own copy of the `i` variable, reflecting the intended behavior.
