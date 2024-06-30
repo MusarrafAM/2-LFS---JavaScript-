@@ -200,6 +200,9 @@ pic 1 = execution context.
 
 <!--! Important = JS is a synchronous single-threaded language. -->
 
+To handle async operations we can user callbacks, promisess, or async away methods.
+Eg asynch operatiohs - setTimeout, setInterval, Fetch
+
 single threaded = can only execute one command at a time.
 synchronous single-threaded = can only execute one command at a time in a specific order. which means it can only go to the next line once the current line has been finished executing.
 
@@ -549,8 +552,113 @@ Block scope :- The variables and function present within the scope of a block se
 Shadowing :- Providing same name to the variable as of those variable which are present in outer scope.
 shadowing let or const outside with var inside is illegal shadowing and gives error.
 
+<!--! important -->
+
 chatGpd answer :-
 Shadowing: Occurs when a variable declared within a block shares the same name as a variable in the outer scope, effectively hiding the outer variable within that block.
 Illegal Shadowing: Refers to cases where a variable declared with let or const in the global scope is shadowed by a var declaration within a block, which is not allowed and would cause a syntax error.
 
 ---Ep.10 - Closures in JS 🔥 ---
+
+Closures = Closures are formed when a function, along with its lexical environment, is bundled together.
+(A closure is formed by bundling a function with its lexical environment.)
+
+function x() {
+var a = 5;
+function y() {
+console.log(a);
+}
+return y;
+}
+
+var z = x(); // in this line function x, it's EC will deleted. and the function y and the closures will be passed here
+// thats how even the function x deleted(var a as well) it remmbers the value of a using closures
+
+z()
+
+when js go to the var z = x() the fuction x is gone (Execution context will be deleted), when returning the function y
+its not only return the function but also returning the closure also.
+
+see index.js for some advance closure things.
+
+pic 1 = Closures 10.1
+see left bottom inthe picture there will be things called clousers
+
+uses of Closures in JS
+Encapsulation, Data Privacy, Function Factories, Callback Functions, Event Handlers, Iterators and Generators Memoization
+
+short Note :-
+
+<!--! Closure :Function bundled with its lexical environment is known as a closure. Whenever function is returned, even if its vanished in execution context but still it remembers the reference it was pointing to. Its not just that function alone it returns but the entire closure and that's where it becomes interesting !! -->
+
+<!--! VERY VERY IMPORTANT Watch these episodes -->
+<!--! Watch the Episode 10,11,12 for better understand of closures and the famous question in the closures. -->
+
+--- Ep. 11 - setTimeout + Closures Interview Question 🔥 ---
+
+Javascript wait for anyone or anything.
+
+<!-- Eg - 1 -->
+
+function x() {
+var i = 5;
+setTimeout(() => {
+console.log(i);
+}, 1000);
+console.log("Hello JS");
+}
+
+x()
+
+// initially Hello JS will be printed then after 1 sec value of i will be printed
+Thats JS doesnt wait for anything.
+
+<!--! Eg - 02 -->
+
+// The famouse question Clousers + SetTimeout
+function x() {
+for (var i = 1; i <= 5; i++) {
+setTimeout(() => {
+console.log(i);
+}, i \* 1000);
+}
+console.log("Hello JS");
+}
+x();
+
+<!--! Explaination of the above code -->
+
+JS dont wait for anything so, it will iterate through the loop ,for setTimeout function it will set the callback
+function as function and set the timer and save those function away it will do the same for the rest of the iteration
+after iteration it will log the HEllo js, so now in the saved funcitons when the timer finished that function will be
+called / Put on the call stack and executes.when the first function completes it time the value of i already 6 so
+all the i will be show the 6 as printed value.(if we just change the var to let the bugg will be fixed but if the
+interviewr asked to do using with the var u have to do the below method.(Closures Mehtod))
+
+<!--! final annswer using cosures -->
+
+function x() {
+for (var i = 1; i <= 5; i++) {
+function close(i) {
+setTimeout(() => {
+console.log(i);
+}, i \* 1000);
+}
+close(i);
+}
+}
+
+x();
+
+<!--! Explaination of the above code -->
+
+In this code, the `close` function is used to encapsulate the `setTimeout` function. This encapsulation ensures that
+each `setTimeout` callback receives its own copy of the `i` variable, reflecting the intended behavior.
+
+When `close(i)` is called inside the loop, it passes the current value of `i` to `setTimeout`, which then
+logs `i` after `i * 1000` milliseconds. This setup works because each `close` call captures the
+specific `i` value at that moment due to closures in JavaScript.
+
+Therefore, by using the `close` function to enclose the `setTimeout`, we ensure that each timeout callback
+displays the correct value of `i` at the time `close` was invoked, demonstrating the power of closures to
+manage variable scope effectively in asynchronous JavaScript operations.
