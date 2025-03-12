@@ -194,6 +194,9 @@ Fetch( url, {options} ) = optios = {methods : “GET”}
 -----------Bros Code Completed -------------------------------------------------------
 
 -------------------------Namaste JavaScript Season - 01 -------------------------------------------
+
+See this in vs code Readme, so we can see the important comments.
+
 ---Ep.1 - How JavaScript Works 🔥& Execution Context ---
 
 <!--! Important = Everything in Javascript happens inside an Execution Context. -->
