@@ -32,15 +32,15 @@ Element, index, array are also provided to the map, filter reduce functions as w
 
 .reduce() = Reduce the elements of an array into single value. ( Eg = get the total sum of array OR get the highest number from an array.) Reduce function will take 2 parametesrs accumulator, element. = Here accumulator is the previous element and element is the next element.
 
-Function declaration vs function expression easy though get better great understanding of these 2. Changer the below note if need later.
+Function Declaration vs Function Expression
 
-Function declaration is the basic function with name, function expression is without a function name we assign it to a variable OR we pass as an argument to another function without a function name.
+A function declaration is a basic function with a name. It is hoisted, meaning it can be called before it is defined in the code.
+A function expression is a function assigned to a variable or passed as an argument to another function. It is mostly anonymous but can also have a name. Function expressions are not hoisted, so they cannot be used before their definition.
+Instead of using function declarations and then passing a callback, we can directly pass a function expression as an argument to methods like forEach, map, filter, and reduce.
 
-Instead of using function declarations then passing a callback we can pass an entire function expression as an arguments to these methods (forEach, map, filter, reduce)
+Function expressions are commonly used in callbacks, higher-order functions, closures, and event listeners, so it's important to fully understand them.
 
-We will be using function expressions a lot (Callbacks, High order functions, Closures, Event Listeners) Make sure you understands it fully.
-
-A better way to write function expressions if it’s a simple function that we only use once is to write it as an Arrow function.
+For simple, one-time-use functions, it's better to write them as arrow functions for cleaner and more concise code.
 
 In Objects = property an object has, where methods are functions that the object can perform.
 
@@ -74,12 +74,15 @@ setIntervel works like setTimeout except it will call a function repeatedly afte
 
 ES6 modules = An external file that contains reusable code that can be imported into other JavaScript files/ Can contain variables, classes, functions etc…
 
-synchronous = Executes line by line consecutively in a sequential manner Code that waits for an operation to complete.
+Synchronous = Executes code line by line in a sequential manner, meaning each operation must complete before the next one starts. The code waits for an operation to finish before moving to the next instruction.
 
-asynchronous = Allows multiple operations to be perforemed concurrently without waiting.
-doesn't block the execution flow and allows the program to continue
-(I/O operations, network requests, fetching data)
-handled with : Callbacjs, Promisses, Async/Await
+Asynchronous = Allows multiple operations to be performed concurrently without waiting. It does not block the execution flow and allows the program to continue running while tasks (such as I/O operations, network requests, or fetching data) are being processed.
+
+Asynchronous operations are handled using:
+
+Callbacks
+Promises
+Async/Await
 
 error = An object that is created to represent a problem that occurs
 try { } = elncose code that might potentially cause an error.
