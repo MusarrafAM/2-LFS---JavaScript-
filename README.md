@@ -4,7 +4,7 @@ Always put the script tag at the end of the body tag, if js has erroes at least 
 
 Type converstion = Number(x) OR String(x) OR Boolean(x)
 
-The Keyword const is a little misleading. It does not define a constant value. It defines a constant reference to a value.
+The keyword const is a bit misleading, as it doesn't define a constant value but rather a constant reference to a value. const prevents reassignment of the variable itself (the reference), but it does not make the value it points to immutable. For objects and arrays, the contents can still be modified, but you cannot reassign the variable to a different value or object.
 
 Math.trunc = Eliminate decimal value , Math.abs = Change negative into positive
 
