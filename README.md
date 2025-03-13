@@ -359,6 +359,8 @@ explaination of above code = after all EC has createted, JS engine will search f
 
 scope chain = chanin of all the lexical environment and the parent references is altogether called scope chain.
 
+In essence, the scope chain helps JavaScript resolve where to find a variable, starting from the innermost scope and looking outward to the global context if needed.
+
 <!--! so if JS engine doesnt find anything in the local memory it goes one next level of scope chain, if doesnt find in it's local memory it goes next level of the scope chain so this whole chain of lexical environment is known as the scope chain -->
 
 ask chatgpd what is scope chain in javascript and below is the answer :-
