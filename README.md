@@ -273,7 +273,7 @@ Here, sayHello() can be called before its declaration in the code because the fu
 
 When we look at hoisting from the perspective of the execution context and call stack in JavaScript, each function invocation creates its own execution context. During the creation phase of this execution context, variables declared with var are hoisted and initialized to undefined, while function declarations are fully hoisted with their definition.
 
-To understand the Callstack Answer more watch teh Ep. 3 if need more explaination (2x speed)
+To understand the Callstack Answer more watch teh Ep.2, ep.3 if need more explaination (2x speed)
 
 ---Ep.4 - How functions work in JS ❤️ & Variable Environment ---
 
