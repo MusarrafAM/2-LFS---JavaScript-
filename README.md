@@ -681,7 +681,7 @@ Anonymous Function: A function without a name, used as a callback or assigned to
 
 First-Class Functions (ChatGpd answer): Functions are treated as values—can be assigned to variables, passed as arguments, and returned from functions
 
-First-Class Functions (akshay answer): Functions treat as first class citizents in js. the ability to use functions as values, pass to another functions, can be return a function from a function. these alltogethre know as first class functions.
+First-Class Functions (akshay answer): Functions treat as first class citizents in js. the ability to use functions as values (assign to a variable), pass to another functions, can be return a function from a function. these abilities alltogether know as first class functions.
 
 Callback Function: A function passed as an argument to another function and executed later.
 
@@ -720,4 +720,18 @@ console.log(`Welcome ${name}`);
 
 greet("Musarraf");
 
----Ep. 14. Callback Functions in JS ft. Event Listeners 🔥| Namaste JavaScript ---
+---Ep.14. Callback Functions in JS ft. Event Listeners 🔥| Namaste JavaScript ---
+
+Functions that are passed to other function as an argument is called callback Functions.
+
+Blocking the Main Thread – If any operation blocks the call stack (main thread) and prevents further execution, it is called a blocking operation/ blocking the main thread. We should use asynchronous operations for tasks that take time (e.g., network requests, file reading) to keep the main thread responsive.
+
+Why Remove Event Listeners? – When we attach an event listener, it creates a closure, which retains references to variables even after execution is complete. If we don’t remove event listeners when they are no longer needed, it can lead to memory leaks since JavaScript won’t automatically clean up these references.
+
+---Ep.15 Asynchronous JavaScript & EVENT LOOP from scratch 🔥 | Namaste JavaScript ---
+---Ep.16 JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 | Namaste JavaScript ---
+---Ep.17. TRUST ISSUES with setTimeout() | Namaste JavaScript ---
+---Ep.18. Higher-Order Functions ft. Functional Programming | Namaste JavaScript ---
+---Ep.19. map, filter & reduce 🙏 Namaste JavaScript 🔥 ---
+
+<!--! Watch the Rest of the Episode like 13,14,15,16,17,18,19.....  -->
