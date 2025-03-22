@@ -729,6 +729,20 @@ Blocking the Main Thread – If any operation blocks the call stack (main thread
 Why Remove Event Listeners? – When we attach an event listener, it creates a closure, which retains references to variables even after execution is complete. If we don’t remove event listeners when they are no longer needed, it can lead to memory leaks since JavaScript won’t automatically clean up these references.
 
 ---Ep.15 Asynchronous JavaScript & EVENT LOOP from scratch 🔥 | Namaste JavaScript ---
+
+<!--! The most Improtatn Video the series Ep.15-->
+
+JUST Wwatch this full video to understand Event Loop again.
+
+Call Stack → JS has a single-threaded call stack (LIFO). Executes synchronously.
+
+Web APIs → setTimeout(), fetch(), DOM API localStorage, console, location → not part of JS, provided by the browser.
+
+Microtask Queue (Higher Priority) = Holds Promise callbacks, MutationObserver, Executes before Callback Queue.
+Callback Queue = Holds setTimeout, setInterval, event listeners. Runs after microtasks.
+
+Starvation = If microtasks keep queuing new microtasks, the callback queue never executes (e.g., infinite .then() calls).
+
 ---Ep.16 JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 | Namaste JavaScript ---
 ---Ep.17. TRUST ISSUES with setTimeout() | Namaste JavaScript ---
 ---Ep.18. Higher-Order Functions ft. Functional Programming | Namaste JavaScript ---
