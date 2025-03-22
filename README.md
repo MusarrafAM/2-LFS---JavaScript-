@@ -673,4 +673,51 @@ Therefore, by using the `close` function to enclose the `setTimeout`, we ensure 
 displays the correct value of `i` at the time `close` was invoked, demonstrating the power of closures to
 manage variable scope effectively in asynchronous JavaScript operations.
 
+<!--! Watch the Rest of the Episode like 13,14,15,16,17,18,19.....  -->
+
 ---Ep.13 - FIRST CLASS FUNCTIONS 🔥ft. Anonymous Functions ---
+
+Anonymous Function: A function without a name, used as a callback or assigned to a variable.
+
+First-Class Functions (ChatGpd answer): Functions are treated as values—can be assigned to variables, passed as arguments, and returned from functions
+
+First-Class Functions (akshay answer): Functions treat as first class citizents in js. the ability to use functions as values, pass to another functions, can be return a function from a function. these alltogethre know as first class functions.
+
+Callback Function: A function passed as an argument to another function and executed later.
+
+Higher-Order Function (HOF): A function that takes another function as an argument or returns a function.
+
+Arrow Function: Shorter syntax for functions (=>), introduced in ES6. No "this" binding.
+
+Pure Function: Returns the same output for the same input, with no side effects.
+
+<!-- !Function Types -->
+
+Function Statement (AKA function Declaration): Hoisted, can be called before definition.
+function a() { console.log("A Called"); }
+
+Function Expression: Assigned to a variable, not hoisted.
+var b = function () {
+console.log("B Called");
+};
+
+Key Differences between Function Declaration and Expression:
+Declaration is hoisted (can be called before definition).
+Expression behaves like a variable (cannot be called before definition).
+
+Named Function Expression: Function expression with a name (accessible only inside itself).
+var b = function xy() {
+console.log("Named Function Expression");
+};
+
+Parameter vs Argument:
+Parameter: Placeholder/Identifier in function definition.
+Argument: Actual value passed to the function.
+
+function greet(name) {
+console.log(`Welcome ${name}`);
+}
+
+greet("Musarraf");
+
+---Ep. 14. Callback Functions in JS ft. Event Listeners 🔥| Namaste JavaScript ---
