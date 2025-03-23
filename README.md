@@ -730,7 +730,7 @@ Why Remove Event Listeners? – When we attach an event listener, it creates a c
 
 ---Ep.15 Asynchronous JavaScript & EVENT LOOP from scratch 🔥 | Namaste JavaScript ---
 
-<!--! The most Improtatn Video the series Ep.15-->
+<!--! The most Improtatn Video of the entire series Ep.15-->
 
 JUST Wwatch this full video to understand Event Loop again.
 
@@ -744,6 +744,25 @@ Callback Queue = Holds setTimeout, setInterval, event listeners. Runs after micr
 Starvation = If microtasks keep queuing new microtasks, the callback queue never executes (e.g., infinite .then() calls).
 
 ---Ep.16 JS Engine EXPOSED 🔥 Google's V8 Architecture 🚀 | Namaste JavaScript ---
+JavaScript Runtime Environment:
+Contains the JavaScript Engine, APIs, Event Loop, Callback Queue, and Microtask Queue.
+
+Node.js: A JavaScript runtime for running JavaScript outside the browser using the V8 engine.
+
+Differences between Browser and Node.js:
+Both have setTimeout and console.
+Browser has DOM APIs, while Node.js has file system/networking APIs.
+
+V8 Engine: Used in Google Chrome and Node.js to execute JavaScript.
+
+JavaScript Engine Process: Parsing → AST → Compilation → Execution.
+Parsing breaks code into tokens and converts it into AST(Abstract Syntax Tree).
+
+JavaScript Interpreted or Compiled?:
+JavaScript uses JIT (Just-In-Time) compilation, combining interpretation and compilation.
+
+Garbage Collection: Mark-and-Sweep algorithm for cleaning up unused memory.
+
 ---Ep.17. TRUST ISSUES with setTimeout() | Namaste JavaScript ---
 ---Ep.18. Higher-Order Functions ft. Functional Programming | Namaste JavaScript ---
 ---Ep.19. map, filter & reduce 🙏 Namaste JavaScript 🔥 ---
