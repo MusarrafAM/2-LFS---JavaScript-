@@ -764,6 +764,17 @@ JavaScript uses JIT (Just-In-Time) compilation, combining interpretation and com
 Garbage Collection: Mark-and-Sweep algorithm for cleaning up unused memory.
 
 ---Ep.17. TRUST ISSUES with setTimeout() | Namaste JavaScript ---
+
+setTimeout does not guarantee execution exactly after n seconds, it may be delayed if the call stack is busy.
+The callback waits in the callback queue until the call stack is empty.
+Even with setTimeout(0), execution is delayed until all synchronous code runs.
+
+Concurrency Model in JavaScript:
+Single-threaded, non-blocking model using the event loop.
+Call stack executes synchronous tasks first.
+Callback queue holds asynchronous tasks (setTimeout, I/O, etc.).
+The event loop moves tasks to the call stack only when it is empty.
+
 ---Ep.18. Higher-Order Functions ft. Functional Programming | Namaste JavaScript ---
 ---Ep.19. map, filter & reduce 🙏 Namaste JavaScript 🔥 ---
 
