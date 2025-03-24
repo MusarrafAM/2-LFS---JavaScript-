@@ -776,6 +776,14 @@ Callback queue holds asynchronous tasks (setTimeout, I/O, etc.).
 The event loop moves tasks to the call stack only when it is empty.
 
 ---Ep.18. Higher-Order Functions ft. Functional Programming | Namaste JavaScript ---
+
+ <!--! how you shoud write your code in your interview inculdeed in this epiode -->
+ <!--! Very Improtant do this interview question before explaination. -->
+
+<!--! important interview qusetion what is HOF? -->
+
+What is Higher order function = A function whcich takes another function as a parameter or returns a function from it. is know as higher order functions.
+
 ---Ep.19. map, filter & reduce 🙏 Namaste JavaScript 🔥 ---
 
 <!--! Watch the Rest of the Episode like 13,14,15,16,17,18,19.....  -->
