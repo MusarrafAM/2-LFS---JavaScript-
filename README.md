@@ -786,4 +786,6 @@ What is Higher order function = A function whcich takes another function as a pa
 
 ---Ep.19. map, filter & reduce 🙏 Namaste JavaScript 🔥 ---
 
-<!--! Watch the Rest of the Episode like 13,14,15,16,17,18,19.....  -->
+<!--! Imortant video covering when to use map,filter,reduce  and some examples -->
+
+
