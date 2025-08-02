@@ -91,7 +91,7 @@ try { } = elncose code that might potentially cause an error.
 Catch { } = Catch and handle any thrown Errors from try { }
 Finally { } = ( optional ) Always executes. Used mostly for cleanup
 Ex= close files, close connection, release resourses.
-if we handle the error properly our program reaches the end without crash
+<!--! if we handle the error properly our program reaches the end without crash -->
 
 DOM – Document Object Model.
 DOM = JS Object { } that represents the page you see in the web browser and provides you with an API to interact with it. Web browsers construct the DOM when it loads an HTML document, and structure all the elements in a tree-like representation. Javascript can access the DOM to dynamically change the content, structure, and style of a webpage.
