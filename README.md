@@ -15,7 +15,9 @@ Slice() extracts elements into a new array without modifying the original. Splic
 Spread operator (…) = expands an array into separate elements
 
 Rest parameter (…) = bundles separate elements into an array. (Important consept google if needed)
-Callback = a function that is passes as an argument to another function. ( Hey when you are done, call this next )
+
+<!-- ! Callback = a function that is passes as an argument to another function. ( Hey when you are done, call this next ) -->
+
 Used to handle asynchronous operations:
 
 1. Reading a file
@@ -787,5 +789,3 @@ What is Higher order function = A function whcich takes another function as a pa
 ---Ep.19. map, filter & reduce 🙏 Namaste JavaScript 🔥 ---
 
 <!--! Imortant video covering when to use map,filter,reduce  and some examples -->
-
-
