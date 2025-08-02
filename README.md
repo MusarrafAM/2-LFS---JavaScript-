@@ -176,8 +176,8 @@ new Promise( ( resolve, reject ) => { asynchronous code } )
 
 if a promise rejects it won’t even try to go to the next promise.
 
-Async/Await = Async makes a function return a Promise.
-Await makes an async function wait for a promise.
+<!--! Async/Await = Async makes a function return a Promise. -->
+<!--! Await makes an async function wait for a promise. -->
 
 Allows you write asynchronous code in synchronous manner
 Async doesn’t have resolve or reject parameters.
