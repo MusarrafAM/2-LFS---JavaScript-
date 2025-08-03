@@ -261,7 +261,6 @@ var myVar = 10;
 The variable myVar is hoisted to the top of its scope (in this case, the global scope), so console.log(myVar) doesn't cause an error, but myVar is undefined at that point.
 
 Similarly, function declarations are fully hoisted:
-javascript Copy code
 
 sayHello(); // "Hello!"
 
