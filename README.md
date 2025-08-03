@@ -358,7 +358,7 @@ a();
 
 explaination of above code = after all EC has createted, JS engine will search for b, initially it will search function c local memory, there is not c , then it will move to its lexical parent which is func a , it will search func a local memory, if not it will go to its lexical parent GEC it will search its local memory, since the var b = 10 will aleady in the memory of GEC it will take its value and log it in the console.
 
-scope chain = chanin of all the lexical environment and the parent references is altogether called scope chain.
+<!--! scope chain = chain of all the lexical environment and the parent references is altogether called scope chain. -->
 
 In essence, the scope chain helps JavaScript resolve where to find a variable, starting from the innermost scope and looking outward to the global context if needed.
 
