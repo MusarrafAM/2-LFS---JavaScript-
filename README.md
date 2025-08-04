@@ -674,7 +674,6 @@ Therefore, by using the `close` function to enclose the `setTimeout`, we ensure 
 displays the correct value of `i` at the time `close` was invoked, demonstrating the power of closures to
 manage variable scope effectively in asynchronous JavaScript operations.
 
-<!--! Watch the Rest of the Episode like 13,14,15,16,17,18,19.....  -->
 
 ---Ep.13 - FIRST CLASS FUNCTIONS 🔥ft. Anonymous Functions ---
 
