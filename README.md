@@ -782,7 +782,7 @@ The event loop moves tasks to the call stack only when it is empty.
 
 <!--! important interview qusetion what is HOF? -->
 
-What is Higher order function = A function whcich takes another function as a parameter or returns a function from it. is know as higher order functions.
+What is Higher order function = A function whcich takes another function as an argument or returns a function from it. is know as higher order functions.
 
 ---Ep.19. map, filter & reduce 🙏 Namaste JavaScript 🔥 ---
 
