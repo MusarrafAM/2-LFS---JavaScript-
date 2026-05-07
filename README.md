@@ -563,6 +563,13 @@ Block scope :- The variables and function present within the scope of a block se
 Shadowing :- Providing same name to the variable as of those variable which are present in outer scope.
 shadowing let or const outside with var inside is illegal shadowing and gives error.
 
+<!--! important => illegal shadowing -->
+let can shadow let
+const can shadow const
+var can shadow var in functions
+But var and let/const cannot conflict in the same scope chain
+
+
 <!--! important -->
 
 chatGpd answer :-
